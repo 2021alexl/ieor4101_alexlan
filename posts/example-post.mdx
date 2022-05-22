@@ -15,3 +15,192 @@ Please see this table about informations covered in this module
 |  2     | Applied Statistics                                                        |
 |  3     | Simulations                                                               |
 
+# 1 Probability Practice Problem
+
+## Q1
+
+A bag contains seven fair coins and three unfair coins. The fair coins have a 1/2 probability of landing on heads. The unfair coins have a 9/10 probability of landing on heads. The coins are indistinguishable by looking at them.
+
+Select one coin from the bag at random and flip that same coin five times. What is the probability that the coin lands on heads exactly twice? 
+
+### ANS
+
+Let F be the event that a fair coin was chosen. Let A be the event that exactly 2 heads were tossed.
+Because there are 10 coins in the bag and seven are fair:
+
+![](https://latex.codecogs.com/svg.image?P(F)&space;=&space;7/10&space;)
+ 
+and 
+
+![](https://latex.codecogs.com/svg.image?P(F^c)&space;=&space;3/10)
+
+If a fair coin is chosen then there are 5nCr2 (five choose two) possible positions for the heads, each head has a probability of 21 and each tail has a probability of 1/2 so
+ 
+![](https://latex.codecogs.com/svg.image?P(A|F)&space;=&space;\binom{5}{2}(1/2)^5)
+
+If an unfair coin is chosen, then there are 5nCr2 (five choose two) possible positions for the heads, each head has a probability of 9/10 and each tail has a probability of 1/10 so
+
+![](https://latex.codecogs.com/svg.image?P(A|F^c)&space;=&space;\binom{5}{2}(9/10)^2(1/10)^3)
+
+Use the law of total probability and the values we found above to conclude that
+
+![](https://latex.codecogs.com/svg.image?P(A)=&space;P(A|F)P(F)&plus;&space;P(A|F^c)P(F^c)&space;=&space;\binom{5}{2}(1/2)^5&space;&plus;&space;\binom{5}{2}(9/10)^3(1/10^2))
+
+## Q2
+
+In the Moderna coronavirus vaccine trial, 14,134 people were given two doses of a vaccine and 14,073 people were given two doses of a placebo. 185 people in the placebo group became infected with COVID-19. 11 people in the vaccinated group became infected with COVID-19.
+
+
+### Q2-A
+
+Calculate the efficacy of the Moderna vaccine.
+
+#### Q2-A ANS
+
+![](https://latex.codecogs.com/svg.image?(P(I|V^c)-P(I|V))/P(I|V^c)&space;=&space;((185/14073)&space;-&space;(11/14134))/(185/14073))
+
+where V is the event that somebody was vaccinated and I is the event that somebody was infected with the viru
+
+### Q2-B
+
+If you were a participant in the trial and you know that you did not become infected with the virus, what is the probability that you received a real vaccine instead of a placebo
+
+#### Q2-A ANS
+
+Solve this using Bayes’s Theorem:
+
+![](https://latex.codecogs.com/svg.image?(P(V|I^c)&space;=&space;P(I^c|V)P(V)/P(I^c))
+
+![](https://latex.codecogs.com/svg.image?P(I^c|V)&space;=&space;(14134-11)/14134)
+
+![](https://latex.codecogs.com/svg.image?P(V)&space;=&space;14134/(14134&plus;14073)&space;=&space;0.50108)
+
+![](https://latex.codecogs.com/svg.image?P(I^c)&space;=&space;1-&space;(11&plus;185)/(14134&plus;14073)&space;=&space;0.99305)
+
+![](https://latex.codecogs.com/svg.image?(P(V|I^c)&space;=&space;P(I^c|V)P(V)/P(I^c)&space;=&space;0.99922*0.50108/0.99305&space;=&space;0.506)
+
+### Q3
+
+You roll a fair die 10 times. Each roll of the die is independent of all of the other rolls. 
+
+Let X be a random variable that represents the number of times the die lands on 2 during these ten rolls.
+
+(A) Write down the pmf for X.
+
+(B) Calculate P(X ≤ 4). 
+
+#### Q3-A ANS
+
+This is a binomial random variable with n = 10 and p = 1/6
+
+![](https://latex.codecogs.com/svg.image?P_&space;{x}(x)&space;=&space;\binom{10}{x}&space;(1/6)^x&space;(5/6)^{10-x})
+
+#### Q3-B ANS
+
+Use PMF to calculate P(X ≤ 4)
+
+![](https://latex.codecogs.com/svg.image?P(x\leq&space;4)&space;=&space;\sum_{0}^{4}P(X=x)&space;)
+
+
+### Q4
+
+A random number X is chosen uniformly from the set {1,2,3,4,5,6,7,8,9,10}.
+
+Then, after X has been chosen, another random number Y is chosen uniformly from the set {1,...,X}. For example, if X = 4, then Y is chosen uniformly from {1, 2, 3, 4}. If X = 6, then Y is chosen uniformly form {1, 2, 3, 4, 5, 6}.
+
+(A) Write down the marginal pmf pX and the conditional pmf pY|X
+
+(B) Find the joint pmf pX,Y
+
+(C) Write an expression for the marginal pmf pY
+
+(D) Find E(Y)
+
+
+#### Q4-A ANS
+
+Marginal PMF for x:
+
+![](https://latex.codecogs.com/svg.image?P_{x}(x)&space;=&space;1/10&space;)
+
+if x = 1,2,3,...,10 (0 otherwise) -- because it is uniformly distributed
+
+Conditional PMF:
+
+![](https://latex.codecogs.com/svg.image?P_{Y|X}(y|x)&space;=&space;1/x)
+
+if x = 1,2,3,...,10 (0 otherwise) and y = 1,...,x (0 otherwise)
+
+#### Q4-B ANS
+
+By the multiplication rule:
+
+![](https://latex.codecogs.com/svg.image?P_{Y,X}(y,x)&space;=&space;p_{x}(x)P_{Y|X}(y|x)=&space;1/10x)
+
+if x = 1,2,3,...,10 (0 otherwise) and y = 1,...,x (0 otherwise)
+
+#### Q4-C ANS
+
+![](https://latex.codecogs.com/svg.image?P_{Y}(y)&space;=&space;\sum_{x=y}^{10}1/10x)
+
+#### Q4-D ANS
+
+If X = x, then Y is uniform on {1,...,x}. Therefore
+
+![](https://latex.codecogs.com/svg.image?E(Y|X=&space;x)&space;=&space;\sum_{y=1}^{x}&space;y/x&space;=&space;(x&plus;1)/2)
+
+By the law of total expectation:
+
+![](https://latex.codecogs.com/svg.image?E(Y)&space;=&space;\sum_{10}^{x=1}E(Y|X=&space;x)P(X=x)&space;=&space;\sum_{10}^{x=1}&space;(x&plus;1)/20&space;=&space;13/4)
+
+### Q5
+
+Let X be a randm variable with PDF:
+
+![](https://latex.codecogs.com/svg.image?f_{x}(x)&space;=&space;x/2&space;)
+
+if x in [0,2]
+
+(A) Calculate P(1 ≤ X ≤ 2)
+
+(B) Calculate E(X)
+
+(C) Calculate Var(X)
+
+(D)  Find the pdf of Z = X^2
+
+#### Q5-A ANS
+
+![](https://latex.codecogs.com/svg.image?P(1\leq&space;X\leq&space;2)&space;=&space;\int_{1}^{2}&space;x/2dx&space;=&space;3/4)
+
+#### Q5-B ANS
+
+![](https://latex.codecogs.com/svg.image?E(X)&space;=&space;\int_{0}^{2}&space;x^2/2dx&space;=&space;4/3)
+
+#### Q5-C ANS
+
+![](https://latex.codecogs.com/svg.image?E(X^2)&space;=&space;\int_{0}^{2}&space;x^2/2&space;\cdot&space;&space;x&space;dx&space;=&space;2)
+
+![](https://latex.codecogs.com/svg.image?Var(x)&space;=&space;E(x^2)&space;-&space;(E(X))^2&space;=&space;2&space;-&space;(4/3)^2&space;=&space;2/9)
+
+#### Q5-D ANS
+
+Because X has the range [0,2], it follows that X^2 will have the range [0,4], so we calculate the CDF. For any Z in [0,4]:
+
+![](https://latex.codecogs.com/svg.image?F_{Z}(z)&space;=&space;P(X^2\leq&space;z)&space;=&space;P(X\leq&space;\sqrt{z}))
+
+Write it in terms of fx:
+
+![](https://latex.codecogs.com/svg.image?F_{z}(z)&space;=&space;\int_{0}^{\sqrt{z}}&space;x/2dx&space;=&space;z/4)
+
+Finally take the derivative:
+
+![](https://latex.codecogs.com/svg.image?f_{z}(z)&space;=&space;F'_{z}(z)&space;=&space;1/4)
+
+
+
+
+
+
+
+
