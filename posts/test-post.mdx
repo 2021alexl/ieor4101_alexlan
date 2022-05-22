@@ -14,9 +14,9 @@ Please see this table about informations covered in this module
 |  4     | Structral Properties                                                      |
 |  5     | Mean and Variance                                                         |
 
-# Events and Event Spaces
+# 1. Events and Event Spaces
 
-## Samples
+## 1.1 Samples
 
 Omega refers to sample space, which is the result of an experiment
 
@@ -24,19 +24,19 @@ Example: if you toss a coin twice:
 
 ![](https://latex.codecogs.com/svg.image?\Omega&space;=&space;{HH,&space;HT,&space;TH,&space;TT}&space;)
 
-## Event
+## 1.2 Event
 
 Event is the subset of Sample
 
 For example: first toss is head (two tosses in total) = {HH, HT}
 
-## Event Space (S)
+## 1.3 Event Space (S)
 
 Event space is a set of events, it is closed under a finite union & measurements.
 
 Event space entails binary operation: like unions, diffs, etc.
 
-## Probability Measure
+## 1.4 Probability Measure
 
 Define over (sample, event space) s.t.
 
@@ -50,7 +50,7 @@ Define over (sample, event space) s.t.
 
 ![](https://latex.codecogs.com/svg.image?P(\alpha&space;\cup&space;\beta&space;)&space;=&space;P\left&space;(&space;\alpha&space;&space;\right&space;)&space;&plus;P(\beta&space;)&space;-P(\alpha&space;\cap&space;\beta&space;)&space;)
 
-## Conditional Probability 
+## 1.5 Conditional Probability 
 
 ![](https://latex.codecogs.com/svg.image?P(F|H))
 
@@ -58,21 +58,21 @@ The equation above is an expression of conditional probability, defined as **fra
 
 ![](https://latex.codecogs.com/svg.image?P(F|H)&space;=&space;P(F\cap&space;H)/P(H))
 
-## Rule of Total Probability
+## 1.6 Rule of Total Probability
 
 ![](https://latex.codecogs.com/svg.image?P(A)&space;=&space;\sum_{i}^{}&space;P({B}_{i})&space;P(A|{B}_{i}))
 
-# Random Variables
+# 2 Random Variables
 
-## Discrete Random Variables
+## 2.1 Discrete Random Variables
 
 Random variables which may take only countable numbers of distinct values, we calculate distinct RVs using probability mass function **(PMF)**
 
-## Continuous Random Variables
+## 2.2 Continuous Random Variables
 
 Random variables which can take any numbers, we calculate distinct RVs using probability density function **(PDF)**
 
-### Properties of PDF:
+### 2.2.1 Properties of PDF:
 
 ![](https://latex.codecogs.com/svg.image?P(0\leq&space;x\leq&space;1)&space;=&space;\int_{0}^{1}&space;f(x)dx)
 
@@ -80,7 +80,7 @@ The equation above is to calculate an actual probability over a segment using in
 
 ![](https://latex.codecogs.com/svg.image?\int_{-\infty&space;}^{\infty&space;}&space;f(x)dx&space;=&space;1)
 
-### CDFs -- Cumulative Distribution Function
+### 2.2.2 CDFs -- Cumulative Distribution Function
 
 ![](https://latex.codecogs.com/svg.image?{F}_{x}(V)&space;=&space;P&space;(X\leqslant&space;V&space;))
 
@@ -94,13 +94,13 @@ measuring the left side's area proportion over V
 
 ![](https://latex.codecogs.com/svg.image?{F}_{x}(V)&space;=&space;\int_{-\infty}^{v&space;}&space;f(x)dx)
 
-# Distributions
+# 3 Distributions
 
-## Common Distributions
+## 3.1 Common Distributions
 
-### Continuous
+### 3.1.1 Continuous
 
-#### 1. Normal Distribution 
+#### 3.1.1.1 Normal Distribution 
 
 ![](https://latex.codecogs.com/svg.image?N&space;(\mu&space;,&space;\sigma&space;^2))
 
@@ -110,7 +110,7 @@ measuring the left side's area proportion over V
 
 ![](https://latex.codecogs.com/svg.image?Variance:&space;\sigma&space;^2)
 
-#### 2. Exponential Distribution 
+#### 3.1.1.2 Exponential Distribution 
 
 ![](https://latex.codecogs.com/svg.image?Exp(\lambda&space;))
 
@@ -134,7 +134,7 @@ The probability that T > (S + t) given that the condition **T > s** holds is equ
 
 Which means: when we refer T as the waiting time, if T is a conditioned failure to observe the event over the same initial period time S, the distribution of the remaining waiting time is the same as the unconditional distribution
 
-#### 3. Gamma Distribution 
+#### 3.1.1.3 Gamma Distribution 
 
 ![](https://latex.codecogs.com/svg.image?\Gamma(k,&space;\theta&space;)&space;)
 
@@ -148,9 +148,9 @@ The PDF/CDF for Gamma is rather complex, but for the record:
 
 ![](https://latex.codecogs.com/svg.image?Variance:&space;k\Theta^2&space;)
 
-### Discrete
+### 3.1.2 Discrete
 
-#### 4. Binomial Distribution
+#### 3.1.2.1 Binomial Distribution
 
 B(n, p)
 
@@ -162,7 +162,7 @@ Mean: np
 
 Variance: np(1-p)
 
-#### 5. Geometric Distribution
+#### 3.1.2.2 Geometric Distribution
 
 G(p)
 
@@ -174,7 +174,7 @@ The distribution/mean of Geometric distribution depends on the definition of k
 
 Mean: 1/p
 
-#### case 2: k represents the number of failures until the first success:
+##### case 2: k represents the number of failures until the first success:
 
 ![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;(1-p)^{k}&space;p)
 
@@ -184,7 +184,7 @@ However, the variance is the same:
 
 ![](https://latex.codecogs.com/svg.image?Variance:&space;(1-p)/p^2)
 
-#### 6. Poisson Distribution
+#### 3.1.2.3 Poisson Distribution
 
 ![](https://latex.codecogs.com/svg.image?Pois(\lambda&space;))
 
@@ -192,7 +192,7 @@ However, the variance is the same:
 
 ![](https://latex.codecogs.com/svg.image?Mean/Variance:&space;\lambda&space;)
 
-## Joint Probability Distribution
+## 3.2 Joint Probability Distribution
 
 ![](https://latex.codecogs.com/svg.image?P(X=x,Y=y)&space;=&space;P(x,y))
 
@@ -200,17 +200,17 @@ However, the variance is the same:
 
 ![](https://latex.codecogs.com/svg.image?\int_{x}^{}\int_{y}&space;f(x,y)dxdy&space;=&space;1)
 
-## Conditional Probability:
+## 3.3 Conditional Probability:
 
 ![](https://latex.codecogs.com/svg.image?P(X=x|Y=y)&space;=&space;P(x,y)/P(y)&space;=&space;P(X=x&space;\bigcap&space;Y=&space;y)/P(Y=y))
 
-## Marginalization:
+## 3.4 Marginalization:
 
 When we want to know P(x) but what we only know is P(x,y)
 
 ![](https://latex.codecogs.com/svg.image?P(x)&space;=&space;\sum_{y}^{}&space;P(y)&space;P(x|y))
 
-## Bayes Rule 
+## 3.5 Bayes Rule 
 
 ![](https://latex.codecogs.com/svg.image?P(x|y)=&space;P(x)P(y|x)/P(y))
 
@@ -220,9 +220,9 @@ When we see the grass is wet, how this fact (wet grass) affects our belief about
 
 ![](https://latex.codecogs.com/svg.image?P(rain|wet)&space;=&space;P(rain)P(wet|rain)/P(wet))
 
-# Structural Properties
+# 4 Structural Properties
 
-## Independence
+## 4.1 Independence
 
 when we say x is independent from y, we mean that knowing y does not affect our belief toward x
 
@@ -230,13 +230,82 @@ when we say x is independent from y, we mean that knowing y does not affect our 
 
 ![](https://latex.codecogs.com/svg.image?P(X=x,&space;Y=&space;y)&space;=&space;P(X=x)&space;P(Y=y))
 
-## Conditional Independence
+## 4.2 Conditional Independence
 
 RVs are rarely independent, but we can leverage local structural properties like conditional independence
 
 CI states that X is conditional independent to Y given Z meansthat knowing the value of Y does not affect our belief toward X if Z is observed
 
 ![](https://latex.codecogs.com/svg.image?P(X=x,&space;Y=&space;y|Z&space;=&space;z)&space;=&space;P(X=x|Z=&space;z)&space;P(Y=y|Z&space;=&space;z))
+
+# 5 Means and Variance
+
+## 5.1 Means
+
+Means are also called expectations:
+
+![](https://latex.codecogs.com/svg.image?\mu&space;=&space;E(X))
+
+### 5.1.1 Discrete Case
+
+![](https://latex.codecogs.com/svg.image?E(X)&space;=&space;\sum_{i}^{}&space;v_{i}&space;P(X&space;=&space;v_{i}))
+
+![](https://latex.codecogs.com/svg.image?E(g(x))&space;=&space;\sum_{i}^{}&space;g(v_{i})&space;P(X&space;=&space;v_{i}))
+
+### 5.1.2 Continuous Case
+
+![](https://latex.codecogs.com/svg.image?E(X)&space;=&space;\int_{-\infty&space;}^{\infty&space;}xf(x)dx)
+
+![](https://latex.codecogs.com/svg.image?E(g(x))&space;=&space;\int_{-\infty&space;}^{\infty&space;}g(x)f(x)dx)
+
+Please note that E(g(x)) does not always equal to g(E(x)) due to the Jensen's Inequality
+
+## 5.2 Variance
+
+![](https://latex.codecogs.com/svg.image?Var(x)&space;=&space;E((x-\mu&space;)^2)&space;=&space;E(x^2)-&space;\mu&space;^2)
+
+Discrete case:
+
+![](https://latex.codecogs.com/svg.image?var(x)&space;=&space;\sum_{i}^{}(v_{i}-\mu&space;)^2P(X=x))
+
+Continuous case: 
+
+![](https://latex.codecogs.com/svg.image?var(x)&space;=&space;\int_{-\infty&space;}^{\infty&space;}(v_{i}-\mu&space;)^2f(x)dx)
+
+## 5.3 Covariance
+
+![](https://latex.codecogs.com/svg.image?Cov(x,y)&space;=&space;E((X-\mu&space;_{x})(Y-\mu&space;_{y}))=&space;E(XY)&space;-&space;\mu&space;_{xy})
+
+## 5.4 Correlation
+
+![](https://latex.codecogs.com/svg.image?\rho&space;(x,y)&space;=&space;Cov(x,y)/\sigma&space;_{x}\sigma&space;_{y})
+
+## 5.5 More Properties about Mean and Variance
+
+![](https://latex.codecogs.com/svg.image?E(X&space;&plus;&space;Y)&space;=&space;E(X)&space;&plus;&space;E(Y))
+
+![](https://latex.codecogs.com/svg.image?E(\alpha&space;X)&space;=&space;\alpha&space;E(X))
+
+If X Y are independent:
+
+![](https://latex.codecogs.com/svg.image?E(XY)=&space;E(X)&space;E(Y))
+
+![](https://latex.codecogs.com/svg.image?Var(\alpha&space;X&plus;b)&space;=&space;\alpha&space;^2Var(x))
+
+If X Y are independent:
+
+![](https://latex.codecogs.com/svg.image?Var(XY)&space;=&space;Var(X)&plus;Var(Y))
+
+## 5.6 More Properties -- Law of total Expectation / variance
+
+**Law of Total Expectation**
+
+![](https://latex.codecogs.com/svg.image?E(Y)&space;=&space;E(E(Y|X))&space;=&space;\int&space;E(Y|X=x)P_{x}(x)dx)
+
+**Law of Total Variance**
+
+![](https://latex.codecogs.com/svg.image?Var(Y)&space;=&space;Var(E(Y|X))&space;&plus;E(Var(Y|X)))
+
 
 
 
