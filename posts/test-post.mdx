@@ -42,10 +42,152 @@ Define over (sample, event space) s.t.
 
 1. for all a in S ![](https://latex.codecogs.com/svg.image?P(a)&space;\geq&space;0)
 
-2. ![](https://latex.codecogs.com/svg.image?P(\Omega&space;)&space;=&space;1)
+2. (add up equal to 1)![](https://latex.codecogs.com/svg.image?P(\Omega&space;)&space;=&space;1)
 
 3. if a and b are disjoint: ![](https://latex.codecogs.com/svg.image?P(a&space;\cup&space;&space;b)&space;=&space;P(a)&space;&plus;&space;P(b))
 
 3 is a special form of this equation, because a and b are disjoint, their intersaction is 0: 
 
 ![](https://latex.codecogs.com/svg.image?P(\alpha&space;\cup&space;\beta&space;)&space;=&space;P\left&space;(&space;\alpha&space;&space;\right&space;)&space;&plus;P(\beta&space;)&space;-P(\alpha&space;\cap&space;\beta&space;)&space;)
+
+## Conditional Probability 
+
+![](https://latex.codecogs.com/svg.image?P(F|H))
+
+The equation above is an expression of conditional probability, defined as **fractions of the world in which H is true that also have F is true**, or, in other words, **The probability that F is True given that H is True. 
+
+![](https://latex.codecogs.com/svg.image?P(F|H)&space;=&space;P(F\cap&space;H)/P(H))
+
+## Rule of Total Probability
+
+![](https://latex.codecogs.com/svg.image?P(A)&space;=&space;\sum_{i}^{}&space;P({B}_{i})&space;P(A|{B}_{i}))
+
+# Random Variables
+
+## Discrete Random Variables
+
+Random variables which may take only countable numbers of distinct values, we calculate distinct RVs using probability mass function **(PMF)**
+
+## Continuous Random Variables
+
+Random variables which can take any numbers, we calculate distinct RVs using probability density function **(PDF)**
+
+### Properties of PDF:
+
+![](https://latex.codecogs.com/svg.image?P(0\leq&space;x\leq&space;1)&space;=&space;\int_{0}^{1}&space;f(x)dx)
+
+The equation above is to calculate an actual probability over a segment using integral of the PDF
+
+![](https://latex.codecogs.com/svg.image?\int_{-\infty&space;}^{\infty&space;}&space;f(x)dx&space;=&space;1)
+
+### CDFs -- Cumulative Distribution Function
+
+![](https://latex.codecogs.com/svg.image?{F}_{x}(V)&space;=&space;P&space;(X\leqslant&space;V&space;))
+
+measuring the left side's area proportion over V
+
+**Discrete Case: **
+
+![](https://latex.codecogs.com/svg.image?{F}_{x}(V)&space;=&space;\sum_{i}^{}&space;P(X&space;=&space;{V}_{i}))
+
+**Continuous Case: **
+
+![](https://latex.codecogs.com/svg.image?{F}_{x}(V)&space;=&space;\int_{-\infty}^{v&space;}&space;f(x)dx)
+
+# Distributions
+
+## Common Distributions
+
+### Continuous
+
+#### 1. Normal Distribution 
+
+![](https://latex.codecogs.com/svg.image?N&space;(\mu&space;,&space;\sigma&space;^2))
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;1/(\sigma&space;\sqrt{2\pi&space;})&space;exp(-(x-\mu&space;)^2/2\sigma&space;^2))
+
+![](https://latex.codecogs.com/svg.image?Mean:&space;\mu&space;)
+
+![](https://latex.codecogs.com/svg.image?Variance:&space;\sigma&space;^2)
+
+#### 2. Exponential Distribution 
+
+![](https://latex.codecogs.com/svg.image?Exp(\lambda&space;))
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;\lambda&space;e^{-\lambda&space;x})
+
+CDF for exponential distribution is:
+
+![](https://latex.codecogs.com/svg.image?F(x)&space;=&space;1-&space;e^{-\lambda&space;x})
+
+![](https://latex.codecogs.com/svg.image?Mean:&space;1/\lambda&space;)
+
+![](https://latex.codecogs.com/svg.image?Variance:&space;1/\lambda&space;^{2}&space;)
+
+Memorylessness of Exponential Distribution:
+
+An exponentially distributed random variable obeys the relation that:
+
+![](https://latex.codecogs.com/svg.image?P(T&space;>&space;s&space;&plus;&space;t&space;|&space;T&space;>&space;s&space;)&space;=&space;P&space;(T&space;>&space;t))
+
+The probability that T > (S + t) given that the condition **T > s** holds is equal to the probability that T > t
+
+Which means: when we refer T as the waiting time, if T is a conditioned failure to observe the event over the same initial period time S, the distribution of the remaining waiting time is the same as the unconditional distribution
+
+#### 3. Gamma Distribution 
+
+![](https://latex.codecogs.com/svg.image?\Gamma(k,&space;\theta&space;)&space;)
+
+k is the shape parameter while theta is the scale parameter, when beta = 1/theta, beta is commonly refered as rate parameter
+
+The PDF/CDF for Gamma is rather complex, but for the record:
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;1/(\Gamma&space;(k)\Theta&space;^k)&space;x^{k-1}&space;e^{-x/\Theta&space;})
+
+![](https://latex.codecogs.com/svg.image?Mean:&space;k\Theta&space;)
+
+![](https://latex.codecogs.com/svg.image?Variance:&space;k\Theta^2&space;)
+
+### Discrete
+
+#### 4. Binomial Distribution
+
+B(n, p)
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;\binom{n}{k}&space;p^k&space;(1-p)^{n-k})
+
+p is the probability of a single success, while n is the total number of trial, and k is the expected number of success
+
+Mean: np
+
+Variance: np(1-p)
+
+#### 5. Geometric Distribution
+
+G(p)
+
+The distribution/mean of Geometric distribution depends on the definition of k
+
+##### case 1: k represents the number of trials:
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;(1-p)^{k-1}&space;p)
+
+Mean: 1/p
+
+#### case 2: k represents the number of failures until the first success:
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;(1-p)^{k}&space;p)
+
+Mean: (1-p)/p
+
+However, the variance is the same:
+
+![](https://latex.codecogs.com/svg.image?Variance:&space;(1-p)/p^2)
+
+#### 6. Poisson Distribution
+
+![](https://latex.codecogs.com/svg.image?Pois(\lambda&space;))
+
+![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;(\lambda&space;^{x}e^{-\lambda&space;})/k!)
+
+![](https://latex.codecogs.com/svg.image?Mean/Variance:&space;\lambda&space;)
