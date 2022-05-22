@@ -36,10 +36,16 @@ Event space is a set of events, it is closed under a finite union & measurements
 
 Event space entails binary operation: like unions, diffs, etc.
 
-![](https://latex.codecogs.com/svg.image?P(\alpha&space;\cup&space;\beta&space;)&space;=&space;P\left&space;(&space;\alpha&space;&space;\right&space;)&space;&plus;P(\beta&space;)&space;-P(\alpha&space;\cap&space;\beta&space;)&space;)
-
 ## Probability Measure
 
 Define over (sample, event space) s.t.
 
-- ![](https://latex.codecogs.com/svg.image?P(\alpha&space;)&space;\geq&space;0&space;) for all a in S
+1. for all a in S ![](https://latex.codecogs.com/svg.image?P(a)&space;\geq&space;0)
+
+2. ![](https://latex.codecogs.com/svg.image?P(\Omega&space;)&space;=&space;1)
+
+3. if a and b are disjoint: ![](https://latex.codecogs.com/svg.image?P(a&space;\cup&space;&space;b)&space;=&space;P(a)&space;&plus;&space;P(b))
+
+3 is a special form of this equation, because a and b are disjoint, their intersaction is 0: 
+
+![](https://latex.codecogs.com/svg.image?P(\alpha&space;\cup&space;\beta&space;)&space;=&space;P\left&space;(&space;\alpha&space;&space;\right&space;)&space;&plus;P(\beta&space;)&space;-P(\alpha&space;\cap&space;\beta&space;)&space;)
