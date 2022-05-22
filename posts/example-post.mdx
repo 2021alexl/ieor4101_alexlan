@@ -79,7 +79,7 @@ Solve this using Bayes’s Theorem:
 
 ![](https://latex.codecogs.com/svg.image?(P(V|I^c)&space;=&space;P(I^c|V)P(V)/P(I^c)&space;=&space;0.99922*0.50108/0.99305&space;=&space;0.506)
 
-### Q3
+## Q3
 
 You roll a fair die 10 times. Each roll of the die is independent of all of the other rolls. 
 
@@ -102,7 +102,7 @@ Use PMF to calculate P(X ≤ 4)
 ![](https://latex.codecogs.com/svg.image?P(x\leq&space;4)&space;=&space;\sum_{0}^{4}P(X=x)&space;)
 
 
-### Q4
+## Q4
 
 A random number X is chosen uniformly from the set {1,2,3,4,5,6,7,8,9,10}.
 
@@ -117,7 +117,7 @@ Then, after X has been chosen, another random number Y is chosen uniformly from 
 (D) Find E(Y)
 
 
-#### Q4-A ANS
+### Q4-A ANS
 
 Marginal PMF for x:
 
@@ -131,7 +131,7 @@ Conditional PMF:
 
 if x = 1,2,3,...,10 (0 otherwise) and y = 1,...,x (0 otherwise)
 
-#### Q4-B ANS
+### Q4-B ANS
 
 By the multiplication rule:
 
@@ -139,11 +139,11 @@ By the multiplication rule:
 
 if x = 1,2,3,...,10 (0 otherwise) and y = 1,...,x (0 otherwise)
 
-#### Q4-C ANS
+### Q4-C ANS
 
 ![](https://latex.codecogs.com/svg.image?P_{Y}(y)&space;=&space;\sum_{x=y}^{10}1/10x)
 
-#### Q4-D ANS
+### Q4-D ANS
 
 If X = x, then Y is uniform on {1,...,x}. Therefore
 
@@ -153,7 +153,7 @@ By the law of total expectation:
 
 ![](https://latex.codecogs.com/svg.image?E(Y)&space;=&space;\sum_{10}^{x=1}E(Y|X=&space;x)P(X=x)&space;=&space;\sum_{10}^{x=1}&space;(x&plus;1)/20&space;=&space;13/4)
 
-### Q5
+## Q5
 
 Let X be a randm variable with PDF:
 
@@ -169,21 +169,21 @@ if x in [0,2]
 
 (D)  Find the pdf of Z = X^2
 
-#### Q5-A ANS
+### Q5-A ANS
 
 ![](https://latex.codecogs.com/svg.image?P(1\leq&space;X\leq&space;2)&space;=&space;\int_{1}^{2}&space;x/2dx&space;=&space;3/4)
 
-#### Q5-B ANS
+### Q5-B ANS
 
 ![](https://latex.codecogs.com/svg.image?E(X)&space;=&space;\int_{0}^{2}&space;x^2/2dx&space;=&space;4/3)
 
-#### Q5-C ANS
+### Q5-C ANS
 
 ![](https://latex.codecogs.com/svg.image?E(X^2)&space;=&space;\int_{0}^{2}&space;x^2/2&space;\cdot&space;&space;x&space;dx&space;=&space;2)
 
 ![](https://latex.codecogs.com/svg.image?Var(x)&space;=&space;E(x^2)&space;-&space;(E(X))^2&space;=&space;2&space;-&space;(4/3)^2&space;=&space;2/9)
 
-#### Q5-D ANS
+### Q5-D ANS
 
 Because X has the range [0,2], it follows that X^2 will have the range [0,4], so we calculate the CDF. For any Z in [0,4]:
 
@@ -197,9 +197,45 @@ Finally take the derivative:
 
 ![](https://latex.codecogs.com/svg.image?f_{z}(z)&space;=&space;F'_{z}(z)&space;=&space;1/4)
 
+## Q6
 
+Let X be the number of people who enter a bakery between noon and 12:20pm. Let Y be the number of people who enter the same bakery between noon and 12:50pm. X and Y have joint probability mass function:
 
+![](https://latex.codecogs.com/svg.image?P_{x,y}(x,y)=(e^{-5}2^x3^{y-x})/x!(y-x)!)
 
+(A) Find the marginal pmf pX
+
+(B) Find the marginal pmf pY
+
+(C) Find conditional pmf pX|Y
+
+### Q6-A ANS
+
+![](https://latex.codecogs.com/svg.image?P_{x}(x)&space;=&space;\sum_{y=x}^{\infty&space;}&space;(e^{-5}2^xy^(-x))/x!(y-x)!&space;=&space;e^{-5}2^{x}/x!&space;\sum_{y=x}^{\infty&space;}&space;3^{y-x}/(y-x)!)
+
+Use z to substitute x - y
+
+![](https://latex.codecogs.com/svg.image?=e^{-5}2^{x}/x!&space;\sum_{z=0}^{\infty&space;}&space;3^{z}/(z)!)
+
+and the sum is the Taylor series of e^3, and therefore:
+
+![](https://latex.codecogs.com/svg.image?p_{x}(x)=e^{-2}2^{x}/x!&space;)
+
+### Q6-B ANS
+
+![](https://latex.codecogs.com/svg.image?P_{y}(y)&space;=&space;\sum_{x=0}^{y}&space;(e^{-5}2^xy^(-x))/x!(y-x)!=&space;e^{-5}/y!\sum_{x=0}^{y}y!/x!(y-x)!&space;2^{x}3^{y-x}&space;=&space;e^{-5}/y!\sum_{x=0}^{y}y\binom{y}{x}&space;2^{x}3^{y-x})
+
+by the binomial formula:
+
+![](https://latex.codecogs.com/svg.image?=&space;e^{-5}(2&plus;3)^y/y!&space;=&space;e^{-5}5^y/y!)
+
+![](https://latex.codecogs.com/svg.image?p_{y}(y)=&space;e^{-5}5^y/y!)
+
+### Q6-C ANS
+
+![](https://latex.codecogs.com/svg.image?P_{x|y}(x|y)&space;=&space;P_{x,y}(x,y)/P_{y}(y)&space;=&space;.........=&space;\binom{y}{x}(2/5)^x(3/5)^{y-x})
+
+X|Y= y is a binomial with parameter n = y and p = 2/5
 
 
 
