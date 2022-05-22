@@ -191,3 +191,54 @@ However, the variance is the same:
 ![](https://latex.codecogs.com/svg.image?f(x)&space;=&space;(\lambda&space;^{x}e^{-\lambda&space;})/k!)
 
 ![](https://latex.codecogs.com/svg.image?Mean/Variance:&space;\lambda&space;)
+
+## Joint Probability Distribution
+
+![](https://latex.codecogs.com/svg.image?P(X=x,Y=y)&space;=&space;P(x,y))
+
+![](https://latex.codecogs.com/svg.image?\sum_{x}^{}&space;\sum_{y}^{}&space;P(X=x,&space;&space;Y=y)&space;=&space;1)
+
+![](https://latex.codecogs.com/svg.image?\int_{x}^{}\int_{y}&space;f(x,y)dxdy&space;=&space;1)
+
+## Conditional Probability:
+
+![](https://latex.codecogs.com/svg.image?P(X=x|Y=y)&space;=&space;P(x,y)/P(y)&space;=&space;P(X=x&space;\bigcap&space;Y=&space;y)/P(Y=y))
+
+## Marginalization:
+
+When we want to know P(x) but what we only know is P(x,y)
+
+![](https://latex.codecogs.com/svg.image?P(x)&space;=&space;\sum_{y}^{}&space;P(y)&space;P(x|y))
+
+## Bayes Rule 
+
+![](https://latex.codecogs.com/svg.image?P(x|y)=&space;P(x)P(y|x)/P(y))
+
+For example:
+
+When we see the grass is wet, how this fact (wet grass) affects our belief about whether it rains?
+
+![](https://latex.codecogs.com/svg.image?P(rain|wet)&space;=&space;P(rain)P(wet|rain)/P(wet))
+
+# Structural Properties
+
+## Independence
+
+when we say x is independent from y, we mean that knowing y does not affect our belief toward x
+
+![](https://latex.codecogs.com/svg.image?P(X|Y=&space;y)&space;=&space;P(X))
+
+![](https://latex.codecogs.com/svg.image?P(X=x,&space;Y=&space;y)&space;=&space;P(X=x)&space;P(Y=y))
+
+## Conditional Independence
+
+RVs are rarely independent, but we can leverage local structural properties like conditional independence
+
+CI states that X is conditional independent to Y given Z meansthat knowing the value of Y does not affect our belief toward X if Z is observed
+
+![](https://latex.codecogs.com/svg.image?P(X=x,&space;Y=&space;y|Z&space;=&space;z)&space;=&space;P(X=x|Z=&space;z)&space;P(Y=y|Z&space;=&space;z))
+
+
+
+
+
