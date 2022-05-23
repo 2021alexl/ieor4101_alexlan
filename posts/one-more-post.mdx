@@ -192,5 +192,165 @@ and therefore we have the CI for the pop variance given by
 
 When we conjecture a statement about a parameter or population, or a broader statement, and we want to prove that it is correct, the only way to prove our conjecture is true is to prove that the alternative conjecture, which is the total opposite & mutually exclusive case of the statement, is statistically unlikely to be true. 
 
-For example: if I want to say that 
+For example: if I want to convince other people my statement that the 550 ml bottle water produced by Poland Spring is actually less than 550 ml, I need to prove that the fact "Poland Spring's 550 ml bottle water on average is equal to or above 550 ml" is not statistically likely to happen. 
+
+The procedure is called hypothesis test, in this case, I made a null hypothesis (called H0) and an alternative hypothesis (called Ha). For most of the cases, the one that I want to purpose (I wish to become correct from the bottom of my heart) is the alternative hypothesis, and the Null Hypothesis is the "mutually exclusive and opposite" thing.
+
+> H0: the Poland Water bottle water on average is has no less than 550ml water
+
+> Ha: the Poland Water bottle water on average is has less than 550ml water
+
+### 2.1 Types of errors
+
+There are two types of errors:
+
+**Type I Error**: A Type I error has been committed if the test rejects the null hypothesis when in fact it is true. The probability of making such an error will be denoted by α, (The Greek letter Alpha). For sure, it is clear that 0 ≤α≤ 1.
+
+**Type II Error**: A Type II error has been committed if the test does not reject H0 when H0 is false. The probability of making such an error will be denoted by β, (the Greek letter Beta) with 0 ≤β≤ 1. What is more important is that we do not like to make such errors with high probabilities.
+
+**Level of Significance**: The probability of committing a type I error is denoted by (Alpha) α. It is called the theoretical level of significance for the test. The most common used values for α are: 0.01, 0.05, or 0.10. Other values for α are at the discretion of the researcher. 
+
+More expressions for α are:
+
+α = P (committing a type I error) = P (rejecting H0 when H0 is true) = P (rejecting H0 when H1 is false).
+
+**The probability of committing a type II error** is denoted by (beta) β. 
+
+Other labels for β are:
+
+β = P (committing a type II error) = P (not rejecting H0 when H0 is false) = P (not rejecting H0 when H1 is true)
+
+**Power of the Test**: The value of 1– β, which stands for P (rejecting H0 when H0 is false) is the power of the test
+
+> Commonly asked Question: which error is more dangerous?
+
+> Type 1, suppose H0 is this man is not guilty and Ha is that this man is guilty, the type 2 error is decide a guilty man to be innocent, which is relatively more tolerable than type 1 error which is to decide a innocent man guilty
+
+### 2.2 Rejection Region
+
+the rejection region is an interval which determined by the distribution and the level of significance you choose. If it falls in the reject region, the H0 hypothesis is deemed to be **too unlikely to happen**, and therefore we reject H0 (not actually meaning we accept Ha, in fact, I have been doing stats for 5 years and I never saw a statement saying Ha is accepted)
+
+**General Conclusion**
+
+> Reject H0 if the computed value of the test statistic falls in the reject region.
+
+> Do not reject H0 if the computed value of the test statistic does not fall inside the reject region.
+
+### 2.3 Steps
+
+There are generally two methods 1) Classical Method 2) P-Value Method
+
+#### 2.3.1 Classical Method Steps
+
+After determining H0 and Ha and significance value alpha, you want to:
+
+1. Deccide the critical value and locate the rejection region -- the detailed procedure is depending on the tails: 
+
+- if your alternative hypothesis is the sign *>*, you want to locate the right hand side (your critical value should be a positive number)
+
+- if your alternative hypothesis is the sign *<*, you want to locate the left hand side (your critical value should be a negative number)
+
+- if your alternative hypothesis is the sign *!=*, you want to devide the alpha by two and locate both sides (your critical value should be a positive number)
+
+2. Compute statistics
+
+3. Make Statistical decision and give conclusion
+
+#### 2.3.2 P-Value Method Steps
+
+After determining H0 and Ha and significance value alpha, you want to:
+
+1. Compute statistics and determine the p-value, which is an attained significance level based on your test's distribution
+
+2. compare p-value and alpha, a p-value less than alpha will lead rejection in H0, no matter which tail it is
+
+3. Make Statistical decision and give conclusion
+
+### 2.4 Hypothesis testing with one parameter
+
+#### 2.4.1 Hypothesis testing with one proportion (p)
+
+the estimated proportion (result from MLE) is the sample proportion: 
+
+> p = x/n
+
+where x is the number of individuals in the sample w/ specified characteristics and n is the sample size.
+
+to calculate standard deviation, we use the formula:
+
+![](https://latex.codecogs.com/svg.image?s_{\hat{P}}&space;=&space;\sqrt{p(1-p)/n})
+
+and it has to follow these three requirements:
+
+- random sample
+-np(1-p) > 10
+-idependent sample values
+
+There are three ways to set up the null and alternative hypothesis:
+
+a) Equal hypothesis versus not equal hypothesis: H0: P = P0 versus H1: P != P0, two-tailed test.
+
+b) At least versus less than: H0: P ≥ P0 versus H1: P < P0, left-tailed test.
+
+c) At most versus greater than: H0: P ≤ P0 versus H1: P > P0, right-tailed test.
+
+For the case (a), we want to use 
+
+![](https://latex.codecogs.com/svg.image?|Z|&space;>&space;Z_{\alpha&space;/2})
+
+as the reject region
+
+For the case (b), we want to use 
+
+![](https://latex.codecogs.com/svg.image?Z&space;<&space;-Z_{\alpha&space;})
+
+as the reject region
+
+For the case (c), we want to use 
+
+![](https://latex.codecogs.com/svg.image?Z&space;>&space;Z_{\alpha&space;})
+
+as the reject region
+
+To calculate the test statistic, we use
+
+![](https://latex.codecogs.com/svg.image?Z=(p-p_{0})/[\sqrt{p_{0}(1-p_{0}/n)}]&space;=&space;(x-np_{0})/\sqrt{np_{0}(1-p_{0})}])
+
+Or if you want to use P method: 
+
+For the Left tail test:
+
+![](https://latex.codecogs.com/svg.image?p_{value}&space;=&space;P(Z<Z_{calculated}))
+
+
+For the Right tail test:
+
+![](https://latex.codecogs.com/svg.image?p_{value}&space;=&space;P(Z>Z_{calculated}))
+
+
+For the two tail test:
+
+![](https://latex.codecogs.com/svg.image?p_{value}&space;=&space;P(Z>Z_{calculated})&space;*&space;2)
+
+If your calculated Z is 2.965 and you are doing a right tail test, use CDF to calculate or use table to get P(Z > 2.65)
+
+#### 2.4.2 Hypothesis testing with one mean (u)
+
+##### 2.4.2.1 When the population variance is known or is unknown but large enough sample size
+
+![](https://latex.codecogs.com/svg.image?Z&space;=&space;(\bar{x}-\mu&space;)/s/\sqrt{n})
+
+use the equation above to get the test statistic and use procedure stated in 2.4.1 to reach your conclusion
+
+##### 2.4.2.2 When the population variance is unknown & small sample size
+
+![](https://latex.codecogs.com/svg.image?T&space;=&space;(\bar{x}-\mu&space;)/s/\sqrt{n})
+
+We want to use this equation to calculate test statistics and we wanna search the T table 
+
+
+### 2.5 Hypothesis Testing Concerning Two Parameters
+
+#### 2.5.1 Two proportions
+
 
