@@ -3,4 +3,94 @@ title: Applied Statistics
 description: "This module includes point & interval estimation, hypothesis testing, and regressions."
 
 ---
+# Overview
+
+Please see this table about informations covered in this module
+
+This module will not cover elementary knowledge of statistics, like frequency distribution, sampling methods, etc.
+
+
+|        | Description                                                               |
+| ------ | ------------------------------------------------------------------------- |
+|  1     | Estimation                                                                |
+|  2     | Testing of Statistical Hypothesis                                         |
+|  3     | Simple Linear Regrssion and Correlation                                   |
+|  4     | Other Tests and Analysis of Variance                                      |
+
+# 1 Estimation
+
+## 1.1 Sampling
+
+Usually, there are some numerical characteristics about the population which the investigator wants to know. Such numerical facts are called parameters; e.g., the population size, population mean, a proportion of some attribute, and variability in the population, etc.
+
+> A Parameter is a numrical value, or a characteristc, of a population.
+
+The parameters cannot be determined exactly, but can only be estimated from a sample by quantities
+called statistics.
+
+> A Statistic is a numerical summary, or a characteristc, of a sample.
+
+## 1.2 Point Estimation
+
+A point Estimate is that value of a statistic, which has been calculated from a sample, that estimates a parameter of the population.
+
+Two methods of Estimation we often adopt: 
+
+1. The method of moments 
+
+2. Maximum Likelihood method
+
+### 1.2.1 The Method of Moments
+
+Let X1, X2, ..., Xn be a random sample of a random variable X. The average value of the kth power of X1, X2, ..., Xn:
+
+![](https://latex.codecogs.com/svg.image?M_{k}&space;=&space;1/n&space;\sum_{i=1}^{n}&space;X_{i}^{k})
+
+
+is called the kth sample moment, for k = 1, 2, 3, ... . while E [X^k] is called kth population moment, for k = 1, 2, 3, ... . Thus the method of moments estimators of the parameters is given by setting the sample moments equal to population moments and solving the resulting equations simlutaneously, for the parameters of the population.
+
+### 1.2.2 The Maximum Likelihood estimators
+
+The essential feature of the principle of maximum likelihood estimation is that it requires the investigator to choose as an estimate of the parameter that value of the parameter for which there is the apriori probability of obtaining the sample point actually observed, is as large as possible. This probability will in general depend on the parameter, which is then given that value for which this probability is as large as possible.
+
+Suppose that the population random variable X has a probability function which depends on some parameter θ =P(X=x) = f (x; θ). We suppose that the form of the function f is known, but not the value of θ. The joint probability function of the sample random variables, evaluated at the sample point ( x1, x2, ..., xn), is
+
+![](https://latex.codecogs.com/svg.image?L(\theta&space;)=&space;f&space;(X1,&space;X2,&space;...,&space;Xn;&space;\Theta&space;)&space;=&space;\prod_{1}^{n}&space;f(x_{i};\Theta&space;))
+
+This function is also known as the likelihood function of the sample. We are considering it as a function of θ when the sample values x1, x2, ..., xn are fixed.
+
+The principle of maximum likelihood requires us to choose as an estimate of the unknown parameter that value of θ for which the likelihood function assumes its maximum value.
+
+### 1.2.3 Statistics as Estimators for Parameters
+
+### 1.2.3.1 The sample Proportion
+
+> On the first day of the semester, in Stat 1350, asking a class of 30 students the following question: Who has a calculator? 12 students raised their hands by showing that they have a calculator. Estimate the percentage of the students, in this class, that have a calculator.
+
+> By the definition of sample porportion, n = 30 and x = 12, p = 12/30 = 40%
+
+### 1.2.3.2 The sample mean and sample wariance
+
+Sample mean:
+
+![](https://latex.codecogs.com/svg.image?\bar{X}&space;=&space;1/n&space;\sum_{i=1}^{n}&space;X_{i})
+
+Sample variance:
+
+![](https://latex.codecogs.com/svg.image?S^2&space;=&space;\sum_{i=1}^{n}(x_{i}-\bar{X})^2/(n-1))
+
+### 1.2.4 Properties of the Estimators and their Sampling Distributions
+
+sampling distribution of pˆ (p hat)
+
+For a simple random sample of size n such that n is at most 0.05N:
+
+> The shape of the sampling distribution of p^ is approximately normal provided np(1-p) is at least 10
+
+> The mean of the sampling distribution is p
+
+> the standard deviation of sampling distribution of p^ is 
+
+> ![](https://latex.codecogs.com/svg.image?s_{p}&space;=&space;\sqrt{p(1-p)/n})
+
 
